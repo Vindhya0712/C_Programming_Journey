@@ -5,17 +5,15 @@ int factorial(int n);
 
 int main() {
     int num;
-    printf("Enter value of n: ");
+    printf("Enter number to find its factorial: ");
     scanf("%d", &num);
-
-    printf("The factorial of %d is %d", num, factorial(num));
+    printf("Factorial of %d is %d", num, factorial(num));
+    return 0;
 }
 
-int factorial(int n) {
-    if (n==0) {
+int factorial (int n) {
+    if (n == 0 || n == 1) {
         return 1;
     }
-    int factNm1 = factorial(n-1);
-    int factN = factNm1 * n;
-    return factN;
+    return n * factorial(n-1);
 }

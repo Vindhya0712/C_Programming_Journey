@@ -1,26 +1,17 @@
 #include <stdio.h>
 
-int fibonacci(int num);
+int fibonacci(int n);
 
 int main() {
-    int n;
-    printf("Which term of the fibonacci do you want? ");
-    scanf("%d", &n);
-    printf("%dth term of the fibonacci series is %d", n, fibonacci(n));
+    int num;
+    printf("Enter number: ");
+    scanf("%d", &num);
+    printf("%d", fibonacci(num));
     return 0;
 }
 
-
-int fibonacci(int num) {
-    //finds the nth term of the fibonacci series
-    if (num == 0) {
-        return 0;
-    } else if (num == 1) {
-        return 1;
-    }
-    int fibNm1 = fibonacci(num - 1);
-    int fibNm2 = fibonacci(num - 2);
-    int fibN = fibNm1 + fibNm2;
-    
-    return fibN;
+int fibonacci(int n) {
+    if (n == 0) return 0; 
+    if (n == 1) return 1;
+    return fibonacci(n - 1) + fibonacci(n - 2);
 }
