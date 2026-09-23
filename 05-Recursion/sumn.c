@@ -1,23 +1,18 @@
 #include <stdio.h>
 
-int sum(int n);
+int sumn(int n);
 
 int main() {
     int num;
     printf("Enter value of n: ");
     scanf("%d", &num);
-    printf("Sum of first %d natural numbers is %d", num, sum(num));
-
+    printf("%d", sumn(num));
     return 0;
 }
 
-
-//recursive function
-int sum(int n) {
-    if (n==1) {
-        return 1;
-    }
-    int sumNm1 = sum(n-1); //sum of 1 to n
-    int sumN = sumNm1 + n;
-    return sumN;
+int sumn(int n) {
+    if (n == 0) return 0;
+    if (n == 1) return 1;
+    int sumnm1 = n + sumn(n-1);
+    return sumnm1;
 }
