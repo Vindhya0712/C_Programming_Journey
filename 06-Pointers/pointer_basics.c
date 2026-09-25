@@ -14,7 +14,10 @@ int main() {
     printf("%p \n", ptr);
     //converting the address to an unsigned integer format to read it better
     printf("%u \n", &age); //This will generate a warning, but no error, so chill!
-    printf("%p \n", &ptr);
+    printf("%p \n", &ptr); // Returns the address of ptr
+
+    printf("%d \n", *ptr); // * returns the value at address...so *ptr returns the value at the address stored in ptr
+    printf("%d \n", *(&age)); //basically the same thing as above
 
     return 0;
 }
